@@ -1,2 +1,3 @@
 # trade-app
-application with trading details
+Steps in creating the application
+1.Create project here https://start.spring.io/
