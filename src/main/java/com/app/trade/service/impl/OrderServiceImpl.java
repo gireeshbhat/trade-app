@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Author: Gireesh
@@ -19,17 +20,22 @@ public class OrderServiceImpl implements OrderService {
     private OrderItemRepository itemRepository;
 
     @Override
-    public long totalCount() {
-        return itemRepository.count();
-    }
-
-    @Override
-    public List<OrderItem> getAll() {
-        return itemRepository.findAll();
+    public List<Map> findCombinableOrders() {
+        return itemRepository.findCombinables();
     }
 
     @Override
     public OrderItem saveItem(OrderItem item) {
         return itemRepository.save(item);
+    }
+
+    @Override
+    public long totalCount() {
+        return itemRepository.count();
+    }
+
+    @Override
+    public Map findAveragePriceAndTotalQuantity() {
+        return itemRepository.findAveragePriceAndTotalQuantity();
     }
 }

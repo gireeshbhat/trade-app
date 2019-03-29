@@ -1,9 +1,9 @@
 package com.app.trade.service;
 
-
 import com.app.trade.model.OrderItem;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Author: Gireesh
@@ -11,9 +11,12 @@ import java.util.List;
  */
 public interface OrderService {
 
+    OrderItem saveItem(OrderItem item);
+
     long totalCount();
 
-    List<OrderItem>  getAll();
+    Map findAveragePriceAndTotalQuantity();
 
-    OrderItem saveItem(OrderItem item);
+    List<Map> findCombinableOrders();
+
 }
