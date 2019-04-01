@@ -19,4 +19,8 @@ public interface OrderService {
 
     List<Map> findCombinableOrders();
 
+    List<OrderItem> findBySecurity(String security);
+
+    List<OrderItem> findByFundName(String fundName);
+
 }

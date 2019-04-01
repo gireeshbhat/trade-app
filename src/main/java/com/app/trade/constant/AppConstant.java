@@ -9,4 +9,9 @@ public class AppConstant {
     public static class Dbo {
         public static final String ORDER_ITEM = "OrderItem";
     }
+
+    public static class App {
+        public static final String SECURITY = "security";
+        public static final String FUND = "fund";
+    }
 }

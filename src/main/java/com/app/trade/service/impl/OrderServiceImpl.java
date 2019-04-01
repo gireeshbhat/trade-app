@@ -25,6 +25,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<OrderItem> findBySecurity(String security) {
+        return itemRepository.findBySecurityIgnoreCase(security);
+    }
+
+    @Override
+    public List<OrderItem> findByFundName(String fundName) {
+        return itemRepository.findByFundNameIgnoreCase(fundName);
+    }
+
+    @Override
     public OrderItem saveItem(OrderItem item) {
         return itemRepository.save(item);
     }

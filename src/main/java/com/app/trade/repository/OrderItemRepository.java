@@ -23,4 +23,9 @@ public interface OrderItemRepository extends JpaRepository<OrderItem, Integer> {
     @Query(value = "SELECT item.side, item.security, item.fundName, COUNT(*) " +
             "FROM OrderItem item GROUP BY item.side, item.security, item.fundName HAVING COUNT(*) > 1", nativeQuery = true)
     List<Map> findCombinables();
+
+    List<OrderItem> findBySecurityIgnoreCase(String secirity);
+
+    List<OrderItem> findByFundNameIgnoreCase(String secirity);
+
 }
